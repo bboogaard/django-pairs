@@ -1,0 +1,29 @@
+ol.grid-view {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    min-height: 120px;
+}
+ol.grid-view li {
+    float: left;
+    padding: 5px;
+    cursor: pointer;
+}
+ol.grid-view li .front {
+    display: none;
+}
+ol.grid-view li .back {
+    display: inline-block;
+}
+ol.grid-view li.turn .front,
+ol.grid-view li.open .front {
+    display: inline-block;
+}
+ol.grid-view li.turn .back,
+ol.grid-view li.open .back {
+    display: none;
+}
+.thumbnail {
+    margin-bottom: 5px;
+}

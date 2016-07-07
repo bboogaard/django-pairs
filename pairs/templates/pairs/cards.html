@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load bootstrap3 %}
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pairs</title>
+
+        {% bootstrap_css %}
+
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}pairs/style.css">
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <ol class="grid-view clearfix">
+                {% for card in deck %}
+                <li data-card-id="{{ card.id }}">
+                    <img src="{{ STATIC_URL }}{{ card.image_url }}" width="100" height="74" class="thumbnail front">
+                    <img src="{{ STATIC_URL }}pairs/images/backimg.png" width="100" height="74" class="thumbnail back">
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        {% bootstrap_javascript %}
+
+        <script type="text/javascript" src="{{ STATIC_URL }}pairs/cards.js"></script>
+    </body>
+</html>
